@@ -1,5 +1,5 @@
 import datetime
-
+from User import user_line_begin, user_line_end
 
 class Order(object):
 
@@ -21,4 +21,4 @@ class Order(object):
 
 
     def __str__(self):
-        return "\n************\n" + "Order ID: " + str(self.id) + "\n" + "Total price: " + str(self.total_price) + "\n"+ "User ID: " + str(self.user_id) + "\n" + "Date created: " + str(self.created) + "\n************\n"
+        return user_line_begin + "\n" + "Order ID: " + str(self.id) + "\n" + "Total price: " + str(self.total_price) + "\n"+ "User ID: " + str(self.user_id) + "\n" + "Date created: " + str(self.created) + "\n" + user_line_end

@@ -1,4 +1,5 @@
 import datetime
+from User import user_line_begin, user_line_end
 
 class Item(object):
 
@@ -22,4 +23,4 @@ class Item(object):
         self.__price = price
 
     def __str__(self):
-        return "\n************\n" + "Item ID: " + str(self.id) + "\n" + "Item title: " + self.title + "\n" + "Item price: " + str(self.price) + "\n************\n"
+        return user_line_begin + "\n" + "Item ID: " + str(self.id) + "\n" + "Item title: " + self.title + "\n" + "Item price: " + str(self.price) + "\n" + user_line_end

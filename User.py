@@ -1,9 +1,13 @@
 import datetime
 
+user_line_begin = "\n********************************************************"
+user_line_end = "********************************************************\n"
+
 class User(object):
     
     __last_id = 0
     __list = list()
+
 
     def __init__(self, name, surname, phone):
         User.__last_id += 1
@@ -37,4 +41,4 @@ class User(object):
         raise ValueError('User not found')
 
     def __str__(self):
-        return "\n************\n" + "User ID: " + str(self.id) + "\n" + "User name: " + self.name + "\n" + "User surname: " + self.surname + "\n" + "User phone: " + str(self.phone) + "\n************\n"
+        return user_line_begin + "\n" + "User ID: " + str(self.id) + "\n" + "User name: " + self.name + "\n" + "User surname: " + self.surname + "\n" + "User phone: " + str(self.phone) + "\n" + user_line_end
