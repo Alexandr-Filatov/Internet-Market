@@ -22,23 +22,25 @@ class User(object):
     def phone(self):
         return self.__phone
 
-    @phone.setter
+    @phone.setter 
     def phone(self, phone):
         self.__phone = phone
 
     @staticmethod
-    def get_user_by_id(self, id):
+    def get_user_by_id(id): # self, точно не нужен
         for user in User.__list:
             if user.id == id:
                 return user
-        raise ValueError('User not found')
+        raise ValueError('User not found') #  придирка: видимо метод не дописан, принудительно вызывает исключение
 
     @staticmethod
-    def get_user_by_phone(self, phone):
+    def get_user_by_phone(phone): #  self, точно не нужен
         for user in User.__list:
             if user.phone == phone:
                 return user
         raise ValueError('User not found')
 
-    def __str__(self):
-        return user_line_begin + "\n" + "User ID: " + str(self.id) + "\n" + "User name: " + self.name + "\n" + "User surname: " + self.surname + "\n" + "User phone: " + str(self.phone) + "\n" + user_line_end
+    def __str__(self):       
+        #return user_line_begin + "\n" + "User ID: " + str(self.id) + "\n" + "User name: " + self.name + "\n" + "User surname: " + self.surname + "\n" + "User phone: " + str(self.phone) + "\n" + user_line_end
+        # придирка можно использовать f-строки
+        return f"{user_line_begin}\nUser ID: {self.id}\nUser name: {self.name}\nUser surname: {self.surname}\nUser phone: {self.phone}\n{user_line_end}"
